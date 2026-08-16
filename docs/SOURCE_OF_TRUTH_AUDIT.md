@@ -8,7 +8,7 @@ For this release, **the numerical values reported in the accepted IEEE Access ma
 
 | Artifact | Classification | Key finding | Repository action |
 |---|---|---|---|
-| Accepted manuscript | **Canonical publication record** | Defines Table I–X values, equations, scenario meanings, and final algorithm terminology. | Converted reported numerical results into `data/published/`. |
+| Published IEEE Access article | **Canonical publication record** | Defines Table I–X values, equations, scenario meanings, and final algorithm terminology. | Converted reported numerical results into `data/published/`. |
 | 15 PowerWorld `.PWB` cases | **Canonical simulation artifacts** | Complete S1–S5 × B&C/BIPSO-GR/Hybrid case set is present. Original `HB` and `HY` naming is inconsistent with the paper. | Extracted and renamed consistently; hashes preserved in `powerworld/CASE_INDEX.csv`. |
 | `EVCS_Grid_Analysis_.xlsx` | **Legacy execution/provenance workbook** | Its per-bus P values round to the Table VII rows, but its SCF/formula metadata are not identical to the final manuscript formulation; the BIPSO-GR/Hybrid table totals are sums of the displayed three-decimal rows rather than rounded higher-precision workbook totals. | Retained unchanged as `data/provenance/EVCS_Grid_Analysis_v2_legacy.xlsx`; not used as canonical method documentation. |
 | `evcs_data.mat` + MATLAB fixed-layout scripts | **Supplementary audit lineage** | Uses a different Dmax/weight/SCF parameterization and produces different P_EVCS totals from Table VII. | Retained under `data/audit/` and `matlab/supplementary_fixed_layout_audit/` with explicit warning. |
@@ -34,7 +34,7 @@ The manuscript Eq. (12) expresses active EVCS power as the charger allocation mu
 
 ### 3. Hybrid charger counts
 
-The accepted manuscript reports a Hybrid installed capacity of 6.279 MW. This is exactly consistent with the integer count totals `[99, 79, 3]` for 11/60/150-kW chargers used by the supplied MATLAB/Python layout source. The legacy workbook contains fractional Hybrid row values totaling `[98.25, 77, 3]`, which is a different layout representation.
+The Published IEEE Access article reports a Hybrid installed capacity of 6.279 MW. This is exactly consistent with the integer count totals `[99, 79, 3]` for 11/60/150-kW chargers used by the supplied MATLAB/Python layout source. The legacy workbook contains fractional Hybrid row values totaling `[98.25, 77, 3]`, which is a different layout representation.
 
 **Decision:** integer counts are canonical for charger allocation and installed capacity; the fractional workbook layout remains provenance only.
 
