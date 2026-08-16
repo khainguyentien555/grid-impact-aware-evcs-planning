@@ -3,7 +3,9 @@ message: "If you use this repository, please cite the associated IEEE Access art
 title: "Reproducibility package for Grid-Impact-Aware Planning of Electric Vehicle Charging Infrastructure for a Tourism-Intensive Island Grid"
 type: software
 version: 1.0.0
-date-released: 2026-08-07
+date-released: 2026-08-16
+url: "https://github.com/khainguyentien555/grid-impact-aware-evcs-planning"
+repository-code: "https://github.com/khainguyentien555/grid-impact-aware-evcs-planning"
 authors:
   - family-names: "Le"
     given-names: "Thi-Minh-Chau"
