@@ -1,82 +1,170 @@
 # Grid-Impact-Aware EVCS Planning — Reproducibility Package
 
-Reproducibility and data package accompanying the IEEE Access article:
+Reproducibility and data package accompanying the published IEEE Access article:
 
 > T.-M.-C. Le, T.-K. Nguyen, and T.-N. Le, **“Grid-Impact-Aware Planning of Electric Vehicle Charging Infrastructure for a Tourism-Intensive Island Grid Using Mixed-Integer Optimization and AC Power Flow Assessment,”** *IEEE Access*, 2026. DOI: **10.1109/ACCESS.2026.3718247**.
 
 ## What this repository contains
 
-This repository separates **published-result data** from **legacy/provenance files** and from a **supplementary fixed-layout audit**. That separation is intentional: the uploaded working files span more than one modeling/version lineage, and mixing them would create a false claim of exact reproducibility.
+This repository separates **canonical published-result data**, **provenance artifacts**, and a **supplementary fixed-layout audit**. This structure preserves traceability across modeling versions while keeping the dataset corresponding to the published article clearly identifiable.
 
-- `data/published/` — canonical numerical values reported in the accepted IEEE Access manuscript and values underlying the supplied final plotting scripts.
-- `powerworld/cases/` — the 15 supplied PowerWorld cases, renamed consistently as B&C / BIPSO-GR / Hybrid.
-- `python/` — cleaned plotting scripts that read canonical CSV data instead of hard-coding publication arrays.
-- `matlab/supplementary_fixed_layout_audit/` — the supplied MATLAB fixed-layout audit workflow, preserved as a **supplementary audit**, not represented as the exact generator of all published tables.
-- `data/provenance/` — the legacy PowerWorld input workbook and machine-readable P/Q extraction retained for traceability.
-- `docs/SOURCE_OF_TRUTH_AUDIT.md` — full audit of version and parameter inconsistencies.
+* `data/published/` — canonical numerical values reported in the published IEEE Access article and values underlying the final plotting scripts.
+* `powerworld/cases/` — 15 PowerWorld study cases covering S1–S5 for the B&C, BIPSO-GR, and Hybrid layouts.
+* `python/` — cleaned, data-driven scripts for reproducing the supplied publication figures.
+* `matlab/supplementary_fixed_layout_audit/` — supplementary MATLAB workflow for independently auditing fixed-layout assignment, charger allocation, objective terms, and EVCS bus injections.
+* `data/provenance/` — earlier calculation artifacts retained for traceability and version reconciliation.
+* `docs/SOURCE_OF_TRUTH_AUDIT.md` — detailed reconciliation of the supplied modeling and data lineages.
+* `docs/DATA_DICTIONARY.md` — definitions, units, and interpretation of the released datasets.
+* `docs/REPRODUCIBILITY.md` — instructions for reproducing the supplied results and figures.
 
 ## Published case study
 
-The paper studies 33 charging-demand points, 8 candidate EVCS sites, and a 16-bus 22 kV distribution network in Phu Quoc, Vietnam. Three layouts are compared: an exact B&C benchmark, BIPSO-GR, and a BIPSO-GR-seeded B&C Hybrid. The grid layer evaluates five operating conditions: base operation, two source-side N-1 cases, and 1.2× / 1.5× EVCS-load stress.
+The article studies 33 charging-demand points, 8 candidate EVCS sites, and a 16-bus, 22 kV distribution network in Phu Quoc, Vietnam. Three layouts are compared: an exact B&C benchmark, BIPSO-GR, and a BIPSO-GR-seeded B&C Hybrid layout.
 
-The published comparison shows that voltage remains non-discriminating while thermal headroom is binding. Under S2, the maximum branch loadings are 118.6% (B&C), 157.3% (BIPSO-GR), and 116.2% (Hybrid). Under S5, the corresponding HCM values are 34.8%, 5.3%, and 35.3%.
+The grid layer evaluates five operating conditions:
+
+* S1 — base operation;
+* S2 — source-side N-1 contingency with SS1 unavailable;
+* S3 — source-side N-1 contingency with SS2 unavailable;
+* S4 — 1.2× seasonal EVCS-load stress;
+* S5 — 1.5× event / accelerated EVCS-load stress.
+
+The published results show that voltage magnitude remains non-discriminating in the studied short underground 22 kV feeder, while thermal headroom becomes the binding grid-acceptability criterion.
+
+Under S2, the maximum branch loadings are:
+
+* B&C: **118.6%**
+* BIPSO-GR: **157.3%**
+* Hybrid: **116.2%**
+
+Under S5, the corresponding hosting-capacity margins are:
+
+* B&C: **34.8%**
+* BIPSO-GR: **5.3%**
+* Hybrid: **35.3%**
 
 ## Quick start — reproduce the supplied figures
 
 ```bash
 python -m venv .venv
-# Windows: .venv\Scripts\activate
-# Linux/macOS: source .venv/bin/activate
+
+# Windows
+.venv\Scripts\activate
+
+# Linux/macOS
+source .venv/bin/activate
+
 python -m pip install -r requirements.txt
 python python/validate_published_data.py
 python python/run_all_figures.py
 ```
 
-Generated PDF, SVG, and 600-dpi PNG files are written to `results/figures/`.
+Generated PDF, SVG, and 600-dpi PNG files are written to:
 
-The cleaned scripts reproduce the data-backed figures corresponding to the paper’s charger-allocation comparison, voltage profiles, five-scenario maximum-loading chart, and S2/S3 branch-loading heatmaps.
+```text
+results/figures/
+```
+
+The cleaned scripts reproduce the data-backed figures corresponding to the charger-allocation comparison, voltage profiles, five-scenario maximum-loading comparison, and S2/S3 branch-loading heatmaps.
 
 ## PowerWorld cases
 
-The original archive contained 15 primary `.PWB` study cases. They are exposed individually in `powerworld/cases/` and mapped in `powerworld/CASE_INDEX.csv`.
+The repository includes 15 primary `.PWB` study cases, exposed individually in:
+
+```text
+powerworld/cases/
+```
+
+Their mapping and provenance are documented in:
+
+```text
+powerworld/CASE_INDEX.csv
+```
 
 Naming convention:
 
-- `BC` = B&C benchmark
-- `BIPSO_GR` = BIPSO-GR heuristic (`HB` in the original filenames)
-- `Hybrid` = warm-started exact-refinement layout (`HY` in the original filenames)
+* `BC` = B&C benchmark
+* `BIPSO_GR` = BIPSO-GR heuristic (`HB` in the original supplied filenames)
+* `Hybrid` = warm-started exact-refinement layout (`HY` in the original supplied filenames)
 
-PowerWorld Simulator 22 or a compatible installation is required to open/solve the binary case files. See `docs/REPRODUCIBILITY.md` and `powerworld/README.md`.
+PowerWorld Simulator 22 or a compatible installation is required to open and solve the binary case files.
 
-## Important source-of-truth note
+See:
 
-The **accepted manuscript values are the publication source of truth**. The supplied `EVCS_Grid_Analysis_v2_legacy.xlsx` contains per-bus P values that round to the published Table VII rows, but its SCF values and active-power formula are not identical to the formulation stated in the manuscript. For BIPSO-GR and Hybrid, the published Table VII totals equal the sums of the displayed three-decimal bus rows rather than conventional rounding of the workbook’s higher-precision totals. Separately, the supplied MATLAB fixed-layout audit uses parameters from `evcs_data.mat` that differ from the final paper (including Dmax, weights, and SCF representation), and its P_EVCS totals differ from Table VII. Therefore these two artifacts are retained for provenance/audit and are not silently merged into the canonical published dataset.
+```text
+docs/REPRODUCIBILITY.md
+powerworld/README.md
+```
 
-Read `docs/SOURCE_OF_TRUTH_AUDIT.md` before extending the code.
+## Source-of-truth policy
+
+The **published IEEE Access article is the authoritative source for the numerical results reported in the paper**.
+
+The repository therefore distinguishes the canonical publication dataset in `data/published/` from earlier spreadsheets and supplementary audit artifacts retained for provenance and traceability.
+
+Those supporting artifacts reflect earlier calculation conventions or parameterizations and should not be interpreted as replacements for the canonical published dataset.
+
+A complete reconciliation record is provided in:
+
+```text
+docs/SOURCE_OF_TRUTH_AUDIT.md
+```
+
+Users extending or modifying the computational workflow are encouraged to review that document first.
 
 ## Repository map
 
 ```text
 .
 ├── data/
-│   ├── published/       # canonical publication numbers
-│   ├── provenance/      # legacy execution workbook
-│   └── audit/           # supplied fixed-layout audit outputs/data
-├── docs/
-├── matlab/
-├── powerworld/
-├── python/
-└── results/
+│   ├── published/       # canonical publication values
+│   ├── provenance/      # provenance and earlier calculation artifacts
+│   └── audit/           # supplementary fixed-layout audit data/results
+├── docs/                # data dictionary, audit, and reproduction guidance
+├── matlab/              # supplementary MATLAB audit workflow
+├── powerworld/          # PowerWorld cases and case index
+├── python/              # validation and figure-generation scripts
+└── results/             # reproduced figures
 ```
 
 ## Citation
 
-Please cite the IEEE Access article when using these data or case models. A repository citation file is supplied as `CITATION.cff`, and a BibTeX entry is available in `citation.bib`.
+When using the data, PowerWorld cases, or computational materials in this repository, please cite the associated IEEE Access article:
+
+> T.-M.-C. Le, T.-K. Nguyen, and T.-N. Le, “Grid-Impact-Aware Planning of Electric Vehicle Charging Infrastructure for a Tourism-Intensive Island Grid Using Mixed-Integer Optimization and AC Power Flow Assessment,” *IEEE Access*, 2026, doi: 10.1109/ACCESS.2026.3718247.
+
+Repository citation metadata are also provided in:
+
+```text
+CITATION.cff
+citation.bib
+```
 
 ## Licensing
 
-See `LICENSE_NOTICE.md`. The repository intentionally does not impose a software/data license on behalf of all co-authors; the authors should select and approve the final license before making the repository public.
+See `LICENSE_NOTICE.md` for the current licensing status of the repository.
+
+A repository-wide software/data license has not yet been adopted. Any future licensing decision should be explicitly documented in the repository and agreed upon by the relevant authors/data owners.
 
 ## Reproducibility scope
 
-The package supports traceability of the fixed EVCS layouts, published bus injections, PowerWorld cases, voltage/thermal results, and final figures. It does **not** claim that the supplied supplementary MATLAB audit is the original end-to-end optimizer that generated every published planning result.
+This package supports traceability and independent verification of:
+
+* the fixed EVCS layouts;
+* published EVCS bus injections;
+* the 15 PowerWorld operating cases;
+* voltage and thermal-security results;
+* HCM and CSI results derived from the published operating cases;
+* the supplied publication figures.
+
+The supplementary MATLAB workflow is provided to independently audit fixed-layout planning and injection calculations. It is **not intended to reproduce every step of the original optimization-development workflow**.
+
+## Version
+
+Current repository release:
+
+```text
+v1.0.0
+```
+
+See `CHANGELOG.md` for version history.
