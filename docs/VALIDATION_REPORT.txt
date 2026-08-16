@@ -1,0 +1,7 @@
+VALIDATION PASSED
+ - integer charger capacities match Table VI
+ - Table VII bus values sum to published totals within display-rounding tolerance
+ - HCM and CSI are consistent with Lmax
+ - supplied voltage-profile minima round to Table IX
+ - S2/S3 heatmap maxima match Table IX
+ - 15 PowerWorld case files match the original archive hashes

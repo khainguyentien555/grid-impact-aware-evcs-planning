@@ -1,0 +1,16 @@
+Scenario,Algorithm,OriginalArchivePath,CanonicalPath,SHA256
+S1,B&C,Scenario 1/S1-BC.PWB,powerworld/cases/S1_Base/S1_BC.PWB,fe18c325fefa57af02b37299c54383683788c97458589f9bb5a4278540b08aa5
+S1,BIPSO-GR,Scenario 1/S1-HB.PWB,powerworld/cases/S1_Base/S1_BIPSO_GR.PWB,1409a20d7d03ae49f8766b43ff39a61c7d6298e62772bd8b3c972808181efb4e
+S1,Hybrid,Scenario 1/S1-HY.PWB,powerworld/cases/S1_Base/S1_Hybrid.PWB,d4e27265e41c26bad95b23b5498671d783b3d2f95f596cc229274a62eb19d2cc
+S2,B&C,Scenario 2/S2-BC.PWB,powerworld/cases/S2_SS1_Out/S2_BC.PWB,1c8802eae6b1fc84c2b93ee727d002f3f99f0e275f40a4b8de94d563bdcb837d
+S2,BIPSO-GR,Scenario 2/S2-HB.PWB,powerworld/cases/S2_SS1_Out/S2_BIPSO_GR.PWB,ab6d0f6842c5aa92d9123aa32bc43d6c20580c113ac0ada1fda74e74baff850c
+S2,Hybrid,Scenario 2/S2-HY.PWB,powerworld/cases/S2_SS1_Out/S2_Hybrid.PWB,237ca66a2cbc7aa16c4318c6ebb3f5fdf2014a11ae7f5146191fe8a49799873a
+S3,B&C,Scenario 3/S3-BC.PWB,powerworld/cases/S3_SS2_Out/S3_BC.PWB,b05802a57841dd3de1743ba6c1e80c5ad255852339945f5cbaad1d3d6f157028
+S3,BIPSO-GR,Scenario 3/S3-HB.PWB,powerworld/cases/S3_SS2_Out/S3_BIPSO_GR.PWB,ca4e76be50eac7291878d71395fcef743660a468f8f95a33fe300422ddac4a02
+S3,Hybrid,Scenario 3/S3-HY.PWB,powerworld/cases/S3_SS2_Out/S3_Hybrid.PWB,c2e30bd5a67b6b1c0dd9207ba7910658b4a2bb8df31512006c8beadf93da916d
+S4,B&C,Scenario 4/S4-BC.PWB,powerworld/cases/S4_Seasonal_1p2/S4_BC.PWB,1bda09b9055b52beb7b4ec5cb20d140e27e27966d12c785684b14eb5fc5bd295
+S4,BIPSO-GR,Scenario 4/S4-HB.PWB,powerworld/cases/S4_Seasonal_1p2/S4_BIPSO_GR.PWB,338dc22f571414dfb7daf5d4a614881f06821423a04463c2823229e1450ae227
+S4,Hybrid,Scenario 4/S4-HY.PWB,powerworld/cases/S4_Seasonal_1p2/S4_Hybrid.PWB,f86ece8fe1f43dc9504c64e88414720ae5961b27903e65ac47e6e9e74f80450a
+S5,B&C,Scenario 5/S5-BC.PWB,powerworld/cases/S5_Event_1p5/S5_BC.PWB,ace04d1ed41067e9d20a52b81678de0733d206ecc335bded7bc32bdca9000e3a
+S5,BIPSO-GR,Scenario 5/S5-HB.PWB,powerworld/cases/S5_Event_1p5/S5_BIPSO_GR.PWB,24c426416c3ea5bc135b5c1134e3d632cd5a307bc42b990c0810b5bf70d2f0e5
+S5,Hybrid,Scenario 5/S5-HY.PWB,powerworld/cases/S5_Event_1p5/S5_Hybrid.PWB,77c12fb6ba4c463ddc6651935c4f06e893d834fc1f8a25986f746057e5044939

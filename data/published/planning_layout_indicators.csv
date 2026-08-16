@@ -1,0 +1,4 @@
+Algorithm,F1_hat,F2_hat,F3_hat,Z_real,Gap_or_HeuristicMetric_percent,MetricInterpretation
+B&C,0.155,0.018,0.086,-0.01765,0.0014,solver-reported optimality gap
+BIPSO-GR,0.209,0.033,0.204,0.00883,0.0091,heuristic convergence metric; not an exact optimality certificate
+Hybrid,0.155,0.018,0.082,-0.01981,0.001,solver-reported optimality gap

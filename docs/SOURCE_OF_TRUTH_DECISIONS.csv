@@ -1,0 +1,11 @@
+Artifact,Classification,Finding,Decision
+Accepted manuscript,canonical,Publication numbers/equations/scenario terminology,Freeze values into data/published
+PowerWorld 15 PWB cases,canonical simulation artifact,Complete S1-S5 x 3 layouts; HB/HY legacy labels,"Extract, rename, hash-verify"
+EVCS_Grid_Analysis_v2_legacy.xlsx,provenance,Per-bus P rows align at 3 decimals; SCF/formula differ from final manuscript; stale verification block,Retain unchanged; do not use as method source
+evcs_data.mat,supplementary audit,Dmax=1.674; six SCFs; weights not exactly 1/3,Keep outside canonical published data
+MATLAB fixed-layout audit,supplementary audit,P_EVCS totals differ from Table VII; served ratios partial,Keep runnable with warning
+Fig4.py + duplicate,plot source,Byte-identical; integer counts match Table VI installed capacities,Normalize to paper Fig3 data-driven script
+Fig5/Fig6a/Fig6b.py,plot source,Voltage arrays consistent with Table IX minima; placeholder comments stale,Normalize to paper Fig5 script/data
+Fig8.py,plot source,Matches Table IX scenario maxima,Normalize to paper Fig6 script
+Fig9a/Fig9b.py,plot source,Matches published N-1 heatmap cells,Normalize to paper Fig7 script
+Fig7a/Fig7b/Image/Legend outside,legacy plotting,Redundant variants/old labels,Exclude from canonical code

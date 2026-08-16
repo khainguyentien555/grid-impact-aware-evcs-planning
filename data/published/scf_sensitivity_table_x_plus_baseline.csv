@@ -1,0 +1,10 @@
+rho,Algorithm,Total_P_EVCS_MW,CriticalBranch,Lmax_percent,HCM_percent,CSI_percent,PublishedSource
+0.8,B&C,1.954,T13-S2,113.6,-13.6,13.6,Table X
+0.8,BIPSO-GR,4.449,T13-S2,146.0,-46.0,46.0,Table X
+0.8,Hybrid,1.772,T13-S2,111.7,-11.7,11.7,Table X
+1.0,B&C,2.443,T13-S2,118.6,-18.6,18.6,Table IX baseline
+1.0,BIPSO-GR,5.561,T13-S2,157.3,-57.3,57.3,Table IX baseline
+1.0,Hybrid,2.215,T13-S2,116.2,-16.2,16.2,Table IX baseline
+1.2,B&C,2.932,T13-S2,123.6,-23.6,23.6,Table X
+1.2,BIPSO-GR,6.674,T13-S2,168.8,-68.8,68.8,Table X
+1.2,Hybrid,2.657,T13-S2,121.4,-21.4,21.4,Table X

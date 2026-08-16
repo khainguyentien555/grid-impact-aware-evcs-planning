@@ -1,0 +1,6 @@
+Scenario,OperatingCondition,SourceStatus,EVCS_LoadMultiplier,TopologyOrLoadAction
+S1,Base case,Both in service,1.0,Normal topology; normally open point remains open
+S2,N-1 contingency,SS1 out,1.0,Loss of SS1; close the normally open transfer path
+S3,N-1 contingency,SS2 out,1.0,Loss of SS2; close the normally open transfer path
+S4,Seasonal peak,Both in service,1.2,Scale only SCF-adjusted EVCS load by 1.2
+S5,Special-event / accelerated EVCS-growth stress,Both in service,1.5,Scale only SCF-adjusted EVCS load by 1.5

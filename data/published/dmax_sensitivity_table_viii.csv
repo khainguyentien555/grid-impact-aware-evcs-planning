@@ -1,0 +1,4 @@
+Dmax_km,StationsReceivingLoad,AverageUsedDistance_km,MaximumUsedDistance_km
+0.5,8,0.3283,0.498
+0.8,7,0.4532,0.784
+1.2,6,0.4727,0.996

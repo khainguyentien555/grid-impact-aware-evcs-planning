@@ -1,0 +1,11 @@
+{
+  "repository_version": "1.0.0",
+  "freeze_date": "2026-08-07",
+  "article_title": "Grid-Impact-Aware Planning of Electric Vehicle Charging Infrastructure for a Tourism-Intensive Island Grid Using Mixed-Integer Optimization and AC Power Flow Assessment",
+  "journal": "IEEE Access",
+  "year": 2026,
+  "doi": "10.1109/ACCESS.2026.3718247",
+  "source_of_truth": "accepted IEEE Access manuscript for published numerical values",
+  "primary_software": ["Python", "MATLAB R2023b", "IBM ILOG CPLEX 22.1.2", "PowerWorld Simulator 22"],
+  "powerworld_primary_cases": 15
+}
