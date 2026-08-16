@@ -1,6 +1,6 @@
 # Data Dictionary
 
-All canonical publication tables are in `data/published/`. Units and field meanings follow the accepted manuscript.
+All canonical publication tables are stored in `data/published/`. Units, field meanings, and reported precision follow the published IEEE Access article.
 
 ## `station_mapping.csv`
 - `CS`: paper EVCS label (CS1–CS8).
