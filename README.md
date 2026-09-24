@@ -1,6 +1,7 @@
 # Grid-Impact-Aware EVCS Planning — Reproducibility Package
 [![Published-Data Validation](https://github.com/khainguyentien555/grid-impact-aware-evcs-planning/actions/workflows/validate.yml/badge.svg)](https://github.com/khainguyentien555/grid-impact-aware-evcs-planning/actions/workflows/validate.yml)
-Reproducibility and data package accompanying the published IEEE Access article:
+
+**Reproducibility and data package accompanying the published IEEE Access article:
 
 **Code, data, PowerWorld cases, and validated numerical artifacts accompanying the published IEEE Access article**
 
