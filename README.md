@@ -1,8 +1,14 @@
 # Grid-Impact-Aware EVCS Planning — Reproducibility Package
-
+[![Published-Data Validation](https://github.com/khainguyentien555/grid-impact-aware-evcs-planning/actions/workflows/validate.yml/badge.svg)](https://github.com/khainguyentien555/grid-impact-aware-evcs-planning/actions/workflows/validate.yml)
 Reproducibility and data package accompanying the published IEEE Access article:
 
-> T.-M.-C. Le, T.-K. Nguyen, and T.-N. Le, **“Grid-Impact-Aware Planning of Electric Vehicle Charging Infrastructure for a Tourism-Intensive Island Grid Using Mixed-Integer Optimization and AC Power Flow Assessment,”** *IEEE Access*, 2026. DOI: **10.1109/ACCESS.2026.3718247**.
+**Code, data, PowerWorld cases, and validated numerical artifacts accompanying the published IEEE Access article**
+
+**Associated article:**  
+Thi-Minh-Chau Le, Tien-Khai Nguyen, and Trong-Nghia Le,  
+“Grid-Impact-Aware Planning of Electric Vehicle Charging Infrastructure for a Tourism-Intensive Island Grid Using Mixed-Integer Optimization and AC Power Flow Assessment,”  
+*IEEE Access*, vol. 14, pp. 119449–119466, 2026.  
+DOI: https://doi.org/10.1109/ACCESS.2026.3718247
 
 ## What this repository contains
 
@@ -129,16 +135,14 @@ Users extending or modifying the computational workflow are encouraged to review
 
 ## Citation
 
-When using the data, PowerWorld cases, or computational materials in this repository, please cite the associated IEEE Access article:
+Please cite the associated article as:
 
-> T.-M.-C. Le, T.-K. Nguyen, and T.-N. Le, “Grid-Impact-Aware Planning of Electric Vehicle Charging Infrastructure for a Tourism-Intensive Island Grid Using Mixed-Integer Optimization and AC Power Flow Assessment,” *IEEE Access*, 2026, doi: 10.1109/ACCESS.2026.3718247.
+> Thi-Minh-Chau Le, Tien-Khai Nguyen, and Trong-Nghia Le,  
+> “Grid-Impact-Aware Planning of Electric Vehicle Charging Infrastructure for a Tourism-Intensive Island Grid Using Mixed-Integer Optimization and AC Power Flow Assessment,”  
+> *IEEE Access*, vol. 14, pp. 119449–119466, 2026.  
+> DOI: https://doi.org/10.1109/ACCESS.2026.3718247
 
-Repository citation metadata are also provided in:
-
-```text
-CITATION.cff
-citation.bib
-```
+Machine-readable citation metadata are provided in `CITATION.cff` and `citation.bib`.
 
 ## Licensing
 
